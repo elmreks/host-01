@@ -6,6 +6,7 @@ type Page = 'home' | 'compare' | 'methodology'
 type NeedFilter = 'auth' | 'payments' | 'database' | 'pwa' | 'lowest-complexity' | 'lowest-lock-in'
 type SortKey = 'overall' | 'simplicity' | 'stability' | 'auth' | 'payments'
 type FilterType = 'all' | OptionType
+type Theme = 'light' | 'dark'
 
 const options = rawOptions as OptionItem[]
 const pageOrder: readonly Page[] = ['home', 'compare', 'methodology']
@@ -97,6 +98,12 @@ function scoreTone(score: number) {
   return 'rough'
 }
 
+function getPreferredTheme(): Theme {
+  const storedTheme = window.localStorage.getItem('hosty-theme')
+  if (storedTheme === 'light' || storedTheme === 'dark') return storedTheme
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
+
 function App() {
   const enrichedOptions = useMemo<EnrichedOptionItem[]>(
     () => options.map((option) => ({ ...option, overall: calculateOverallScore(option) })),
@@ -104,6 +111,7 @@ function App() {
   )
 
   const [page, setPage] = useState<Page>(() => getHashPage())
+  const [theme, setTheme] = useState<Theme>(() => getPreferredTheme())
   const [query, setQuery] = useState('')
   const [filterType, setFilterType] = useState<FilterType>('all')
   const [activeNeed, setActiveNeed] = useState<NeedFilter | null>(null)
@@ -119,6 +127,12 @@ function App() {
   useEffect(() => {
     window.location.hash = page
   }, [page])
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    document.documentElement.style.colorScheme = theme
+    window.localStorage.setItem('hosty-theme', theme)
+  }, [theme])
 
   const filteredOptions = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase()
@@ -182,17 +196,22 @@ function App() {
             <em>hosting comparison notes</em>
           </span>
         </button>
-        <nav className="nav">
-          <button className={page === 'home' ? 'is-active' : ''} onClick={() => setPage('home')}>
-            Home
+        <div className="topbar-actions">
+          <nav className="nav">
+            <button className={page === 'home' ? 'is-active' : ''} onClick={() => setPage('home')}>
+              Home
+            </button>
+            <button className={page === 'compare' ? 'is-active' : ''} onClick={() => setPage('compare')}>
+              Compare
+            </button>
+            <button className={page === 'methodology' ? 'is-active' : ''} onClick={() => setPage('methodology')}>
+              Methodology
+            </button>
+          </nav>
+          <button className="theme-toggle" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+            {theme === 'light' ? 'Dark mode' : 'Light mode'}
           </button>
-          <button className={page === 'compare' ? 'is-active' : ''} onClick={() => setPage('compare')}>
-            Compare
-          </button>
-          <button className={page === 'methodology' ? 'is-active' : ''} onClick={() => setPage('methodology')}>
-            Methodology
-          </button>
-        </nav>
+        </div>
       </header>
 
       <main className="page-wrap">
