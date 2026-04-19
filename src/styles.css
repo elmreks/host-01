@@ -220,21 +220,31 @@ button {
 }
 
 .theme-toggle {
-  padding: 10px 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--panel);
-  color: var(--muted);
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.theme-toggle-icon {
+  font-size: 1.1rem;
+  line-height: 1;
 }
 
 .theme-toggle:hover {
-  background: rgba(127, 127, 127, 0.08);
-  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 86%, var(--bg));
+  color: var(--bg);
 }
 
 :root[data-theme='dark'] .nav button:hover,
 :root[data-theme='dark'] .theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: color-mix(in srgb, var(--ink) 86%, var(--bg));
 }
 
 .theme-toggle:active {
@@ -1086,13 +1096,13 @@ button {
     justify-content: space-between;
   }
 
-  .nav button,
-  .theme-toggle {
+  .nav button {
     flex: 1;
   }
 
   .theme-toggle {
     width: 100%;
+    height: 44px;
     text-align: center;
   }
 

@@ -208,8 +208,15 @@ function App() {
               Methodology
             </button>
           </nav>
-          <button className="theme-toggle" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-            {theme === 'light' ? 'Dark mode' : 'Light mode'}
+          <button
+            className="theme-toggle"
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+          >
+            <span aria-hidden="true" className="theme-toggle-icon">
+              {theme === 'light' ? '☾' : '☼'}
+            </span>
           </button>
         </div>
       </header>
