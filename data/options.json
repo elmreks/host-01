@@ -1,0 +1,362 @@
+[
+  {
+    "id": "firebase",
+    "name": "Firebase",
+    "type": "platform",
+    "urls": ["https://firebase.google.com"],
+    "best_for": ["mvp", "mobile-first apps", "fast solo builds"],
+    "summary": "Most complete all-in-one starter if you want auth, database, storage, and deploy-friendly tooling in one ecosystem.",
+    "scores": {
+      "simplicity": 5,
+      "stability": 5,
+      "frontend_hosting": 4,
+      "backend_functions": 4,
+      "database": 4,
+      "auth": 5,
+      "payments": 3,
+      "storage": 5,
+      "pwa": 4,
+      "pricing_clarity": 3,
+      "lock_in_risk": 2,
+      "scalability_confidence": 5
+    },
+    "pros": [
+      "strong all-in-one product surface",
+      "excellent auth and storage story",
+      "good fit for shipping quickly"
+    ],
+    "cons": [
+      "meaningful ecosystem lock-in",
+      "pricing can feel fuzzy as usage grows",
+      "payments still require outside integration"
+    ],
+    "recommended_for": ["builders who want fewer stack decisions", "client portals", "starter SaaS"],
+    "avoid_if": ["you strongly prefer portability", "you want a SQL-first default"],
+    "notes": "Best all-in-one starter for getting moving without assembling too many parts.",
+    "last_reviewed": "2026-04-16"
+  },
+  {
+    "id": "vercel-supabase",
+    "name": "Vercel + Supabase",
+    "type": "combo",
+    "urls": ["https://vercel.com", "https://supabase.com"],
+    "best_for": ["saas", "pwa", "frontend-heavy apps"],
+    "summary": "A practical modern default for web apps: clean frontend deploys paired with strong auth, database, and storage.",
+    "scores": {
+      "simplicity": 4,
+      "stability": 4,
+      "frontend_hosting": 5,
+      "backend_functions": 4,
+      "database": 5,
+      "auth": 5,
+      "payments": 4,
+      "storage": 4,
+      "pwa": 5,
+      "pricing_clarity": 3,
+      "lock_in_risk": 3,
+      "scalability_confidence": 4
+    },
+    "pros": [
+      "great developer experience",
+      "strong auth plus Postgres story",
+      "excellent fit for modern React-style apps"
+    ],
+    "cons": [
+      "split stack means more decisions",
+      "pricing and responsibility live in two places",
+      "not truly all-in-one"
+    ],
+    "recommended_for": ["solo builders", "subscription apps", "web-first MVPs"],
+    "avoid_if": ["you want one dashboard for everything"],
+    "notes": "Strong modern combo starter and likely the most balanced web-app default.",
+    "last_reviewed": "2026-04-16"
+  },
+  {
+    "id": "render",
+    "name": "Render",
+    "type": "platform",
+    "urls": ["https://render.com"],
+    "best_for": ["full-stack apps", "traditional web apps", "simple app hosting"],
+    "summary": "Feels closer to a conventional full-stack host, with less frontend-specialized polish but solid simplicity.",
+    "scores": {
+      "simplicity": 4,
+      "stability": 4,
+      "frontend_hosting": 3,
+      "backend_functions": 4,
+      "database": 4,
+      "auth": 2,
+      "payments": 4,
+      "storage": 2,
+      "pwa": 4,
+      "pricing_clarity": 4,
+      "lock_in_risk": 4,
+      "scalability_confidence": 4
+    },
+    "pros": [
+      "good full-stack mental model",
+      "easier to understand than cloud-sprawl setups",
+      "pricing is relatively legible"
+    ],
+    "cons": [
+      "auth is not first-class",
+      "less optimized for frontend-first workflows",
+      "not as integrated as all-in-one app platforms"
+    ],
+    "recommended_for": ["builders who want app hosting without edge complexity", "teams comfortable wiring auth separately"],
+    "avoid_if": ["you want batteries-included auth and storage"],
+    "notes": "A sensible full-stack host if you value straightforward deployment over trendiness.",
+    "last_reviewed": "2026-04-16"
+  },
+  {
+    "id": "railway",
+    "name": "Railway",
+    "type": "platform",
+    "urls": ["https://railway.com"],
+    "best_for": ["backend-heavy MVPs", "internal tools", "small full-stack products"],
+    "summary": "A builder-friendly deployment platform with a pleasant workflow, especially for app backends and services.",
+    "scores": {
+      "simplicity": 4,
+      "stability": 3,
+      "frontend_hosting": 3,
+      "backend_functions": 4,
+      "database": 4,
+      "auth": 2,
+      "payments": 4,
+      "storage": 2,
+      "pwa": 4,
+      "pricing_clarity": 3,
+      "lock_in_risk": 4,
+      "scalability_confidence": 3
+    },
+    "pros": [
+      "nice developer experience",
+      "good for shipping real app services quickly",
+      "flexible enough for varied stacks"
+    ],
+    "cons": [
+      "not a complete product stack",
+      "fewer built-in primitives than Firebase or Supabase",
+      "long-term confidence can feel lower than bigger incumbents"
+    ],
+    "recommended_for": ["small teams", "builders who want less ceremony than cloud providers"],
+    "avoid_if": ["you want an obvious all-in-one answer"],
+    "notes": "Good full-stack host, but not the easiest single recommendation for auth-heavy starters.",
+    "last_reviewed": "2026-04-16"
+  },
+  {
+    "id": "cloudflare",
+    "name": "Cloudflare",
+    "type": "platform",
+    "urls": ["https://www.cloudflare.com/developer-platform/products/workers/"],
+    "best_for": ["edge apps", "performance-sensitive workloads", "platform tinkerers"],
+    "summary": "Extremely capable edge-first platform with broad primitives, but not always the lowest-friction starter path.",
+    "scores": {
+      "simplicity": 3,
+      "stability": 5,
+      "frontend_hosting": 4,
+      "backend_functions": 5,
+      "database": 3,
+      "auth": 2,
+      "payments": 3,
+      "storage": 4,
+      "pwa": 5,
+      "pricing_clarity": 3,
+      "lock_in_risk": 3,
+      "scalability_confidence": 5
+    },
+    "pros": [
+      "serious edge performance and reach",
+      "deep platform breadth",
+      "strong fit for modern web delivery"
+    ],
+    "cons": [
+      "more platform-shaped thinking required",
+      "auth and product-layer conveniences are not the core story",
+      "can be overkill for simple starter builds"
+    ],
+    "recommended_for": ["builders who specifically want edge-first power", "performance-minded teams"],
+    "avoid_if": ["you just want the simplest obvious MVP stack"],
+    "notes": "Powerful, but better when you know why you want it.",
+    "last_reviewed": "2026-04-16"
+  },
+  {
+    "id": "vercel",
+    "name": "Vercel",
+    "type": "platform",
+    "urls": ["https://vercel.com"],
+    "best_for": ["frontend apps", "Next.js", "fast web UI deployment"],
+    "summary": "Excellent frontend-first deployment experience, but incomplete as a single answer for auth, database, and billing-heavy apps.",
+    "scores": {
+      "simplicity": 4,
+      "stability": 5,
+      "frontend_hosting": 5,
+      "backend_functions": 3,
+      "database": 2,
+      "auth": 2,
+      "payments": 3,
+      "storage": 2,
+      "pwa": 5,
+      "pricing_clarity": 3,
+      "lock_in_risk": 3,
+      "scalability_confidence": 4
+    },
+    "pros": [
+      "best-in-class frontend deploy workflow",
+      "strong DX and preview environments",
+      "great fit for content-heavy or frontend-led apps"
+    ],
+    "cons": [
+      "not a complete application stack by itself",
+      "you still need database/auth choices",
+      "cost clarity can get less obvious at scale"
+    ],
+    "recommended_for": ["frontend-first projects", "teams already comfortable composing services"],
+    "avoid_if": ["you want one stack choice that covers the whole app"],
+    "notes": "Great platform, but usually better as part of a combo than as the whole answer.",
+    "last_reviewed": "2026-04-16"
+  },
+  {
+    "id": "supabase",
+    "name": "Supabase",
+    "type": "platform",
+    "urls": ["https://supabase.com"],
+    "best_for": ["Postgres-first apps", "auth + database", "backend foundation"],
+    "summary": "A strong backend platform layer for modern apps, especially when you want Postgres, auth, and storage with good developer ergonomics.",
+    "scores": {
+      "simplicity": 4,
+      "stability": 4,
+      "frontend_hosting": 1,
+      "backend_functions": 3,
+      "database": 5,
+      "auth": 5,
+      "payments": 3,
+      "storage": 4,
+      "pwa": 4,
+      "pricing_clarity": 4,
+      "lock_in_risk": 4,
+      "scalability_confidence": 4
+    },
+    "pros": [
+      "excellent auth and Postgres pairing",
+      "clear backend primitives",
+      "portable-feeling relative to more closed ecosystems"
+    ],
+    "cons": [
+      "not a standalone hosting answer",
+      "frontend hosting still needs a partner",
+      "edge/server logic story is good but not everything"
+    ],
+    "recommended_for": ["builders who want a real database and auth fast", "teams pairing with Vercel or Cloudflare"],
+    "avoid_if": ["you want frontend deployment included in the same choice"],
+    "notes": "Excellent building block, best understood as part of a stack decision.",
+    "last_reviewed": "2026-04-16"
+  },
+  {
+    "id": "cloudflare-supabase",
+    "name": "Cloudflare + Supabase",
+    "type": "combo",
+    "urls": ["https://www.cloudflare.com/developer-platform/products/workers/", "https://supabase.com"],
+    "best_for": ["edge-heavy apps", "PWAs", "web apps needing global performance"],
+    "summary": "A compelling combo if you want Cloudflare’s edge model plus a saner auth/database layer from Supabase.",
+    "scores": {
+      "simplicity": 3,
+      "stability": 5,
+      "frontend_hosting": 4,
+      "backend_functions": 5,
+      "database": 5,
+      "auth": 5,
+      "payments": 4,
+      "storage": 4,
+      "pwa": 5,
+      "pricing_clarity": 3,
+      "lock_in_risk": 3,
+      "scalability_confidence": 5
+    },
+    "pros": [
+      "excellent capability ceiling",
+      "strong auth and database without giving up edge reach",
+      "very strong PWA and performance fit"
+    ],
+    "cons": [
+      "more moving parts than simpler starters",
+      "requires comfort with platform decisions",
+      "not the easiest path for a first build"
+    ],
+    "recommended_for": ["builders with clear edge/performance reasons", "advanced solo builders"],
+    "avoid_if": ["you want the lowest cognitive load"],
+    "notes": "Potentially excellent, but not as effortlessly starter-friendly as Vercel + Supabase.",
+    "last_reviewed": "2026-04-16"
+  },
+  {
+    "id": "netlify",
+    "name": "Netlify",
+    "type": "platform",
+    "urls": ["https://www.netlify.com"],
+    "best_for": ["frontend sites", "lighter web apps", "JAMstack-style projects"],
+    "summary": "Still solid for frontend deployment, but no longer feels like the automatic default for richer app stacks.",
+    "scores": {
+      "simplicity": 4,
+      "stability": 4,
+      "frontend_hosting": 5,
+      "backend_functions": 3,
+      "database": 2,
+      "auth": 2,
+      "payments": 3,
+      "storage": 2,
+      "pwa": 4,
+      "pricing_clarity": 3,
+      "lock_in_risk": 3,
+      "scalability_confidence": 4
+    },
+    "pros": [
+      "good frontend hosting experience",
+      "clear deploy workflow",
+      "works well for static and lightly dynamic projects"
+    ],
+    "cons": [
+      "not a full app stack by itself",
+      "less obvious for auth/database-heavy products",
+      "weaker starter story compared with stronger combos"
+    ],
+    "recommended_for": ["content sites", "frontend-led projects with external services"],
+    "avoid_if": ["you want a modern all-in-one app recommendation"],
+    "notes": "Solid contender, just not the easiest default answer today.",
+    "last_reviewed": "2026-04-16"
+  },
+  {
+    "id": "vercel-firebase",
+    "name": "Vercel + Firebase",
+    "type": "combo",
+    "urls": ["https://vercel.com", "https://firebase.google.com"],
+    "best_for": ["frontend apps", "fast prototypes", "teams that like Firebase primitives"],
+    "summary": "Combines excellent frontend deployment with Firebase’s batteries-included backend services.",
+    "scores": {
+      "simplicity": 4,
+      "stability": 5,
+      "frontend_hosting": 5,
+      "backend_functions": 4,
+      "database": 4,
+      "auth": 5,
+      "payments": 4,
+      "storage": 5,
+      "pwa": 5,
+      "pricing_clarity": 3,
+      "lock_in_risk": 2,
+      "scalability_confidence": 5
+    },
+    "pros": [
+      "strong frontend workflow plus strong product primitives",
+      "very good auth and storage story",
+      "can move fast with a small team"
+    ],
+    "cons": [
+      "still split across two systems",
+      "Firebase lock-in remains real",
+      "can be more stack than you need if Firebase alone is enough"
+    ],
+    "recommended_for": ["builders who love Vercel on the frontend but want Firebase backend convenience"],
+    "avoid_if": ["you want portability or simpler all-in-one ownership"],
+    "notes": "Strong combo, though arguably less clean than either Firebase alone or Vercel + Supabase.",
+    "last_reviewed": "2026-04-16"
+  }
+]
